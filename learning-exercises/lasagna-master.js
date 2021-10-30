@@ -16,5 +16,9 @@ export const addSecretIngredient = (friendsList, myList) => {
 }
 
 export const scaleRecipe = (recipe, portions) => {
-  
+  const scaled = {};
+  for (const key in recipe) {
+    scaled[key] = recipe[key] * portions / 2;
+  }
+  return scaled;
 }
