@@ -10,8 +10,7 @@ export function pickFruit(variety, quantity, callback) {
 
 export function purchaseInventoryIfAvailable(err, isAvailable) {
   if (err) throw new Error(err);
-  if (!err && isAvailable) return 'PURCHASE';
-  if (!err && !isAvailable) return 'NOOP';
+  return isAvailable ? 'PURCHASE' : 'NOOP';
 }
 
 export function pickAndPurchaseFruit(variety, quantity) {
